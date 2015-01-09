@@ -1,0 +1,32 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.0.0'
+    }
+}
+apply plugin: 'com.android.application'
+apply plugin: 'idea'
+android {
+    compileSdkVersion 'android-21'
+    buildToolsVersion '21.1.2'
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources true
+            proguardFile getDefaultProguardFile('proguard-android.txt')
+        }
+    }
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 21
+    }
+}
+
+repositories {
+    jcenter()
+}
+dependencies {
+    compile 'com.android.support:appcompat-v7:21.+'
+}
